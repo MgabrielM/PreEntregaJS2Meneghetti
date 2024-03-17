@@ -136,18 +136,18 @@ function usuarios(){
 
 function crear_usuarios(){
     let usuarios_admin_id = 0;
-    let usuarios_admin_nombre = prompt("Ingresar nombre: ");
+    let usuarios_admin_nombre = prompt("Ingresar nombre: ");   
     let usuarios_admin_edad = prompt("Ingresar edad: ");
     let usuarios_admin_ciudad = prompt("Ingresar ciudad de residencia:");
     
     for(i=0; i <= usuarios_admin.length; i++){
-        if(!usuarios_admin.find(objeto => objeto.id === i)){
-            usuarios_admin_id = i;
+        if(!usuarios_admin.find(objeto => objeto.id == i)){
+            usuarios_admin_id = parseInt(i);
         }
     }
 
     let usuarios_admin_adicionar = 
-        {id: parseInt(usuarios_admin_id), nombre: toString(usuarios_admin_nombre), edad: parseInt(usuarios_admin_edad), ciudad: toString(usuarios_admin_ciudad)};
+        {id: usuarios_admin_id, nombre: usuarios_admin_nombre, edad: parseInt(usuarios_admin_edad), ciudad: usuarios_admin_ciudad};
 
     usuarios_admin.push(usuarios_admin_adicionar);
     usuarios();
